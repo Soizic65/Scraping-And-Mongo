@@ -1,0 +1,30 @@
+{
+  "name": "Scraping-And-Mongo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Soizic65/Scraping-And-Mongo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Soizic65/Scraping-And-Mongo/issues"
+  },
+  "homepage": "https://github.com/Soizic65/Scraping-And-Mongo#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "cheerio": "^1.0.0-rc.2",
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.2",
+    "mongoose": "^5.4.15",
+    "morgan": "^1.9.1",
+    "nodemon": "^1.18.10"
+  }
+}

@@ -1,0 +1,31 @@
+<script src="https://code.jquery.com/jquery.js"></script>
+
+<div class="jumbotron">
+  <h1 class="display-4"id ='heading2'>What Are Your Thoughts?</h1>  
+  <hr class="my-4">
+  {{#with selectedArticle}}
+  <p id = 'selected'>Selected Article:  {{title}}</p>
+  {{/with}}
+  
+</div>
+
+
+<form>
+  <div class="form-group">
+    <label for="notesForm">Title</label>
+    <input type="title" class="form-control" id="noteTitle">
+  </div>
+  <div class="form-group">
+    <label for="noteTextArea">Notes</label>
+    <textarea class="form-control" id="notesText" rows="6"></textarea>
+  </div>
+</form>
+{{#with selectedArticle}}
+<button type="button" id="saveNotes" class="btn btn-dark" data-id="{{_id}}">Submit</button>
+<button type="button" id="viewNotes" class="btn btn-light viewNotes" data-id="{{_id}}">View Notes</button>
+<a class="btn btn-primary" href="/" role="button">Home</a>
+{{/with}}
+<div class="completedNotes">
+
+</div>
+<script src="app.js"></script>

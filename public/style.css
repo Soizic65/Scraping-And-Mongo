@@ -1,0 +1,72 @@
+body {
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    background-color: #7da3be;
+}
+.btn-primary{
+    background-color:#fd6051;
+    border-color:#7da3be;
+}
+
+
+
+.jumbotron {
+    height: 450px;
+    width: 100%;    
+    background-image: url("https://www.libcreative.com.au/web/wp-content/uploads/2013/08/sunsetRT.jpg");
+    background-repeat: no-repeat;
+    background-size:100% 100%;
+    color: white;
+    font-size: 20px;
+    
+    
+}
+
+h5{
+    color:#2b1d42;
+    font-family: 'Laila', serif;
+    font-style:italic;
+    font-weight:bold;
+    
+}
+#heading {
+    font-family: 'Srisakdi', cursive;
+    color: #2b1d42;
+    text-align: center;
+}
+
+#heading2{
+    font-family: 'Srisakdi', cursive;
+    color: #2b1d42;
+    text-align: center;
+}
+#selected{
+    font-family: 'Laila', serif;
+    color: #2b1d42;
+    text-align: center;
+}
+#heading3{
+    font-family: 'Srisakdi', cursive;
+    color: #2b1d42;
+    text-align: center;
+}
+.btn-dark{
+    background-color: #ff8967;
+}
+.btn-light{
+    background-color:#fd6051;
+    color:white;
+}
+.btn-danger{
+    background-color:#392033;
+}
+.delete{
+    margin-left:68%;
+}
+.alert-danger{
+    margin-right:80%;
+    background-color: #fd6051;
+    color:white;
+}

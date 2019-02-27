@@ -1,0 +1,87 @@
+<script src="https://code.jquery.com/jquery.js"></script>
+<link rel="stylesheet" type="text/css" href="/style.css" />
+
+<div class="jumbotron">
+  <h1 class="display-4" id='heading'>Family News, Tips, and Stories</h1>
+  <hr class="my-4">
+  <a class="btn btn-primary btn-lg" href="/scrape" role="button">New Articles</a>
+  <a class="btn btn-primary btn-lg delete" role="button">Delete Articles</a>
+</div>
+
+
+<div class="unreadArticles" id="articles">
+  <div class="alert alert-danger" role="alert">
+    Unread Articles
+  </div>
+  {{#each dbArticles}}
+  {{#unless read}}
+  <div class="media" data-id="{{_id}}">
+
+    <div class="media-body">
+      <a href="{{link}}">
+        <h5 class="mt-0">{{title}}</h5>
+      </a>
+      {{summary}}
+    </div>
+    <button type="button" id="notesBtn" class="btn btn-dark notesBtn" data-id="{{_id}}">Add Notes</button>
+    <button type="button" id="viewNotes" class="btn btn-light viewNotes" data-id="{{_id}}">View Notes</button>
+    <button type="button" id="readBtn" class="btn btn-danger readBtn" data-id="{{_id}}">Mark As Read</button>
+  </div>
+  {{/unless}}
+  {{/each}}
+</div>
+
+<div class="readArticles" id="articles">
+  <div class="alert alert-danger" role="alert">
+    Read Articles
+  </div>
+
+  {{#each dbArticles}}
+  {{#if read}}
+  <div class="media">
+
+    <div class="media-body">
+      <a href="{{link}}">
+        <h5 class="mt-0">{{title}}</h5>
+      </a>
+      {{summary}}
+    </div>
+    <button type="button" id="notesBtn" class="btn btn-dark notesBtn" data-id="{{_id}}">Add Notes</button>
+    <button type="button" id="viewNotes" class="btn btn-ligh viewNotes" data-id="{{_id}}">View Notes</button>
+    <button type="button" id="unreadBtn" class="btn btn-warning unreadBtn" data-id="{{_id}}">Mark as Unread</button>
+  </div>
+  {{/if}}
+  {{/each}}
+</div>
+
+
+<script>
+  $(".notesBtn").on("click", function () {
+    var thisId = $(this).attr("data-id");
+    window.location = "/articles/" + thisId
+  })
+  $(".readBtn").on("click", function () {
+    var thisId = $(this).attr("data-id");
+    $.ajax({
+      method: "POST",
+      url: "/read/" + thisId
+    })
+    location.reload()
+  })
+  $(".unreadBtn").on("click", function () {
+    var thisId = $(this).attr("data-id");
+    $.ajax({
+      method: "POST",
+      url: "/unread/" + thisId
+    })
+    location.reload()
+  })
+  $(".delete").on("click", function () {
+    $.ajax({
+      method: "POST",
+      url: "delete"
+    })
+    location.reload()
+  })
+</script>
+<script src="app.js"></script>
