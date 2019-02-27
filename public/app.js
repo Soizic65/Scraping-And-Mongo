@@ -22,6 +22,6 @@ $("#save-notes").on("click", function() {
   $(".view-notes").on("click", function(){
     var thisId = $(this).attr("data-id");
     window.location = "/articles-notes/" + thisId 
-    console.log("here")
+    
   })
   
