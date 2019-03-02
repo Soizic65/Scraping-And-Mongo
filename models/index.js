@@ -1,7 +1,4 @@
-var Article = require('./Article');
-var Note = require('./Note');
 module.exports = {
-    Article, 
-    Note
+    Article: require("./Article"),
+    Note: require("./Note")
   };
-    
